@@ -15,6 +15,67 @@ const pigLatin = (word) => {
 
   // Your code here
 
+let newWord = word.toLowerCase().trim()
+
+let firstVowel = function (newWord) {
+  let aIdx = newWord.indexOf("a");
+  let eIdx = newWord.indexOf("e");
+  let iIdx = newWord.indexOf("i");
+  let oIdx = newWord.indexOf("o");
+  let uIdx = newWord.indexOf("u");
+
+  let response = -1;
+
+  if (aIdx == -1) {
+  } else if (aIdx != -1) {
+    response = aIdx
+  }
+
+  if (eIdx == -1) {
+  } else if (eIdx != -1 && response == -1){
+    response = eIdx
+  } else if (eIdx != -1 && response > eIdx) {
+    response = eIdx
+  }
+
+  if  (iIdx == -1) {
+  } else if (iIdx != -1 && response == -1) {
+      response = iIdx
+    } else if (iIdx != -1 && response > iIdx) {
+      response = iIdx
+    }
+
+  if (oIdx == -1) {   
+  } else if (oIdx != -1 && response == -1) {
+    response = oIdx
+  } else if (oIdx != -1 && response > oIdx) {
+    response = oIdx
+  }
+
+  if (uIdx == -1) {
+  } else if (uIdx != -1 && response == -1) {
+    response = uIdx 
+  } else if (uIdx != -1 && response == -1) {
+    response = uIdx 
+  }
+    return response
+  }
+  
+  let nW = newWord
+  let fV = firstVowel(newWord)
+
+  if (position == 0) {
+    nW = newWord + "yay"
+    return nW
+  } else if (position == -1) {
+    nW = newWord + "ay"
+    return nW
+  } else if (position > 0) {
+    let part1 = newWord.substring(0, position)
+    let part2 = newWord.substring(position)
+    nW = part2 + part1 + "ay"
+    return nW
+  }
 }
 
 // the first function called in the program to get an input from the user
